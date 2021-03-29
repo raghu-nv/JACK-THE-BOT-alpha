@@ -7,21 +7,24 @@
 	<script>
 
 
-
-window.addEventListener('DOMContentLoaded', (event) => {
-    document.getElementById('WACLauncher__Button').click()   
-});
-        window.watsonAssistantChatOptions = {
+		window.addEventListener('DOMContentLoaded', (event) => {
+			
+			const t=document.createElement('script');
+          t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+          document.head.appendChild(t);
+			
+			window.watsonAssistantChatOptions = {
             integrationID: "c32cd26c-f205-4dd5-868b-123f7e8d4710", // The ID of this integration.
             region: "au-syd", // The region your integration is hosted in.
             serviceInstanceID: "4538c875-e5de-4a65-a846-49e9181814a3", // The ID of your service instance.
             onLoad: function(instance) { instance.render(); }
           };
-        setTimeout(function(){
-          const t=document.createElement('script');
-          t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
-          document.head.appendChild(t);
-        });
+      
+    document.getElementById('WACLauncher__Button').click()   
+});
+
+
+        
       </script>
 </head>
 
